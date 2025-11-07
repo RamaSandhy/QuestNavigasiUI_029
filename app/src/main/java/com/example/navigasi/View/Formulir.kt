@@ -8,6 +8,7 @@ import androidx.compose.material3.DividerDefaults.Thickness
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -61,3 +62,21 @@ fun FormulirIsian(
 
             Row {
                 jenisk.forEach
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    RadioButton(
+                        selected = false,
+                        onClick = { item }
+                    )
+                    Text(text = item)
+                }
+            }
+        }
+
+        HorizontalDivider(
+            modifier = Modifier
+                .padding(top = 20.dp)
+                .width(width = 250.dp),
+            thickness = 1.dp,
+            color = Color.Red
