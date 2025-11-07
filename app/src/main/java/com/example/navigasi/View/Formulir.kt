@@ -4,6 +4,8 @@ import androidx.annotation.OptIn
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.DividerDefaults.Thickness
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
@@ -20,9 +22,10 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.navigasi.R
-import java.lang.reflect.Modifier
+import androidx.compose.ui.Modifier
 
-@OptIn(markerClass = ExperienceMaterial3Api::class)
+
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormulirIsian(
     jenkel: List<String> = listOf("Laki-Laki", "Perempuan"),
@@ -61,18 +64,18 @@ fun FormulirIsian(
             )
 
             Row {
-                jenisk.forEach
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    RadioButton(
-                        selected = false,
-                        onClick = { item }
-                    )
-                    Text(text = item)
+                jenkel.forEach { item ->
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = false,
+                            onClick = { /* aksi saat dipilih */ }
+                        )
+                        Text(text = item)
+                    }
                 }
             }
-        }
 
         HorizontalDivider(
             modifier = Modifier
