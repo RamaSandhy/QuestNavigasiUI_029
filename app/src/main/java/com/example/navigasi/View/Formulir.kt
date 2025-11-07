@@ -2,9 +2,11 @@ package com.example.navigasi.View
 
 import androidx.annotation.OptIn
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -15,16 +17,16 @@ import androidx.compose.ui.res.stringResource
 import com.example.navigasi.R
 import java.lang.reflect.Modifier
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(markerClass = ExperienceMaterial3Api::class)
 @Composable
-fun FormulirJen(
+fun FormulirIsian(
     jenkel: List<String> = listOf("Laki-Laki", "Perempuan"),
     OnSubmitBtnClick: () -> Unit
 ) {
     Scaffold(modifier = Modifier,
         topBar = {
             TopAppBar(
-                title = { Text(text = stringResource(id = R.string.jen), color = Color.White) },
+                title = { Text(text = stringResource(id = R.string.form_isian), color = Color.White) },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = colorResource(id = R.color.teal_700)
                 )
@@ -34,8 +36,9 @@ fun FormulirJen(
         Column(
             modifier = Modifier.padding(paddingValues = isiRuang),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
+            horizontalAlignment = Alignment.CenterHorizontally) {
             OutlinedTextField(
                 value = "",
                 singleLine = true,
+                modifier = Modifier
+                    .padding()
