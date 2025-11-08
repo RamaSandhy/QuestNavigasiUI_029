@@ -23,10 +23,17 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.navigation.R
+import com.example.navigasi.R
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilData(
     onBackBtnClick: () -> Unit
 ) {
+    val items = listOf(
+        Pair(first = stringResource(id = R.string.nama_lengkap), second = "Contoh Nama"),
+        Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Lainnya"),
+        Pair(first = stringResource(id = R.string.alamat), second = "Yogyakarta")
+    )
+}
